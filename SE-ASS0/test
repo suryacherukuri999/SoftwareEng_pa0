@@ -1,0 +1,18 @@
+#!/bin/bash
+# Compile the main application and test classes
+#javac -d out/ -cp src/test/java/:/Users/suryacherukuri/Desktop/junit-platform-console-standalone-1.8.0.jar src/main/java/app/*.java src/test/java/app/AppTest.java
+
+# Run the tests and generate a report
+#java -jar /Users/suryacherukuri/Desktop/junit-platform-console-standalone-1.8.0.jar --classpath=out/ --scan-classpath
+
+# Assuming your test output includes passing and coverage percentage, for example:
+#passing=$(ggrep -oP "Tests passed: \K[0-9]+" out/test-output.txt)
+#coverage=90  # Hardcoded for example purposes, you might want to calculate it dynamically
+
+#echo "passing: ${passing}%"
+#echo "coverage: ${coverage}%"
+
+mvn clean test jacoco:report
+coverage=$(ggrep -oP '(?<=<td class="ctr2">)[0-9]+%' target/site/jacoco/index.html | head -n 1 | sed 's/%//')
+echo "Code Coverage: $coverage%"
+

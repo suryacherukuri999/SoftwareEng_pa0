@@ -1,0 +1,9 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+my-app,app,Session,6,9,0,0,2,4,2,1,2,1
+my-app,app,Main,183,0,23,0,53,0,16,0,3,0
+my-app,app,App.new TypeToken() {...},6,0,0,0,1,0,1,0,1,0
+my-app,app,App.new TypeToken() {...},0,6,0,0,0,1,0,1,0,1
+my-app,app,Person,18,62,0,0,8,14,5,6,5,6
+my-app,app,App.new TypeToken() {...},0,6,0,0,0,1,0,1,0,1
+my-app,app,App.new TypeToken() {...},0,6,0,0,0,1,0,1,0,1
+my-app,app,App,119,353,18,30,38,84,16,14,1,5

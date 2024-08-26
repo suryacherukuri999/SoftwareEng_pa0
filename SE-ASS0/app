@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e  # exits if any command fails
+#javac -d out/ src/main/java/app/*.java
+#java -cp out/ app.Main "$@"
+
+# Compile the project using Maven
+echo "Compiling the project..."
+mvn clean compile
+
+# Execute the main application
+#echo "Running the application..."
+#mvn exec:java -Dexec.mainClass="app.Main" -Dexec.args="$args"
+
+args=""
+for arg in "$@"
+do
+    args="$args \"$arg\""
+done
+
+# Run the main application with the prepared arguments
+mvn exec:java -Dexec.mainClass="app.Main" -Dexec.args="$args"
